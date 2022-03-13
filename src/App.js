@@ -1,9 +1,8 @@
 import { useState } from "react";
 import "./App.css";
-import Api from "./Screens/Api";
-import styled, { ThemeProvider } from "styled-components";
+import Api from "./Components/Api";
+import { ThemeProvider } from "styled-components";
 import { darkTheme, GlobalStyles, lightTheme } from "./themes.styles";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Container } from "react-bootstrap";
 
 function App() {
