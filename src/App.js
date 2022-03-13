@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import Api from "./Screens/Api";
+import styled, { ThemeProvider } from "styled-components";
+import { darkTheme, GlobalStyles, lightTheme } from "./themes.styles";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Container } from "react-bootstrap";
 
 function App() {
+  const [theme, settheme] = useState("light");
+  const themeToggler = () => {
+    theme === "light" ? settheme("dark") : settheme("light");
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <Container className="outerDiv" style={{ display: "inline" }}>
+      <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+        <GlobalStyles />
+
+        <div
+          className="toggleDiv"
+          onChange={() => {
+            themeToggler();
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <input type="checkbox" class="checkbox" id="checkbox" />
+          <label for="checkbox" class="label">
+            <div class="ball" />
+          </label>
+        </div>
+        <Api />
+      </ThemeProvider>
+    </Container>
   );
 }
 

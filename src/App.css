@@ -1,38 +1,91 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+* {
+    box-sizing: border-box;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  body {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: background 0.4s linear;
   }
-  to {
-    transform: rotate(360deg);
-  }
+.outerDiv{
+    padding-top: 5rem;
+    display: flex;
+    flex-direction: row-reverse;
 }
+.table-responsive{
+    text-align: center;
+    justify-content: center;
+    padding: 5px;
+    display: block;
+}
+/* .dark-table th tr{ 
+    text-align: center; 
+    justify-content: center;
+} */
+.toggleDiv{
+    display: inline;
+}
+
+input{
+    width: 50%;
+    border: 2px solid;
+    border-radius: 30px;
+    margin: 5px;
+    padding: 5px;
+}
+.search{
+    padding: 5px;
+}
+.sortButtonDiv{
+    padding: 5px;
+    display: inline-flex
+}
+.sortButton{
+    display: inline-flex;
+    padding: 2px;
+    border-radius: 3px; 
+
+}
+
+
+  body.dark {
+    background-color: #292c35;
+  }
+  .checkbox {
+    opacity: 0;
+    display: flex;
+  }
+  
+  .label {
+    width: 50px;
+    height: 26px;
+    background-color:grey;
+    display: flexb;
+    border-radius:50px;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 12px;
+    padding: 5px;
+    position: relative;
+    transform: scale(1.5);
+  }
+  
+  .ball {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+    cursor: pointer;
+  }
+  
+  /*  target the elemenent after the label*/
+  .checkbox:checked + .label .ball{
+    transform: translateX(24px);
+  }
